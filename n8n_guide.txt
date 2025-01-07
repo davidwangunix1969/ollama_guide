@@ -1,12 +1,16 @@
 Guide for Setting Up n8n 
 
+Please refer to this guide on Datacamp if the info in this guide is outdated =>
+https://www.datacamp.com/tutorial/local-ai
+
 1. Login to a machine with Ubuntu 22.04 running
 
 
-2. Open your terminal and enter the following commands to install sqlite3
+2. Download Docker on your machine. You may refer to the docker_open_webui_ollama_guide.txt in the same repo.
 
-sudo apt update 
-sudo apt install sqlite3
+3. Open your terminal and enter the following commands to install
+
+git clone https://github.com/n8n-io/self-hosted-ai-starter-kit.git
 
 
 3. Look up the command_line_ollama_guide.txt in this repository on how to install Ollama.
