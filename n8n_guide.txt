@@ -1,1 +1,3 @@
+Guide for Setting Up n8n 
 
+s1. udo apt update && sudo apt upgrade -y
