@@ -1,0 +1,4 @@
+print the output of quoted SQL command: "SELECT orders.Order ID, customers.Name, orders.Order Date
+FROM orders
+JOIN customers
+ON orders.Customer ID = customers.Customer ID; "
