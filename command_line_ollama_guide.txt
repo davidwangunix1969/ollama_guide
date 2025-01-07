@@ -1,0 +1,46 @@
+Guide to Running Ollama on Ubuntu 22.04
+
+# Step 1: Login to a machine with Ubuntu 22.04 running
+
+  
+# Step 2: Open your terminal and download the "pciutils" library to detect your CPU and GPU.
+  Remember that in most cases, you don't have a GPU. So Ollama will run in CPU mode. 
+
+sudo apt-get install pciutils
+
+
+
+# Step 3: Download and run the installation shell script from Ollama
+
+curl -fsSL https://ollama.com/install.sh | sh
+
+
+# Step 4: Serve the app. If you don't serve the Ollama app, commands like "ollama pull" will fail.
+
+ollama serve 
+
+
+# Step 5: Open another terminal tab and download a LLM from Ollama into your machine.
+
+ollama pull llama3.2:1b-instruct-fp16
+
+The model mentioned above is small enough to run on machines with only CPU access.
+https://ollama.com/library/llama3.2:1b-instruct-fp16
+  
+Of course if you want something smaller, there is tiny llama. 
+https://ollama.com/library/tinyllama
+
+If you have a powerful machine with GPU, you can run the big model
+https://ollama.com/library/llama3.3
+
+
+
+# Step 5: Ask Ollama to run the LLM
+
+ollama run llama3.2:1b-instruct-fp16
+
+Once you run this command, the terminal will become your interface with the model.
+It is just like a chatbot. Press enter to enter your prompt. 
+If you accidentally run a big model on CPU only, it will likely halt. 
+
+
