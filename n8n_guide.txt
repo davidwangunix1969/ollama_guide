@@ -1,20 +1,25 @@
 Guide for Setting Up n8n 
 
-Please refer to this guide on Datacamp if the info in this guide is outdated =>
-https://www.datacamp.com/tutorial/local-ai
-
 1. Login to a machine with Ubuntu 22.04 running
 
+2. Download Ollama and the models you want. Please refer to command_line_ollama_guide.txt in the same repo. 
 
-2. Download Docker on your machine. You may refer to the docker_open_webui_ollama_guide.txt in the same repo.
+3. Create a folder where you want to run n8n in. For example, you can create one in Desktop/Personal_Data
 
-3. Open your terminal and enter the following commands to install
+cd Desktop
+cd Personal_Data
+mkdir n8n_ollama_demo
+cd n8n_ollama_demo
 
-git clone https://github.com/n8n-io/self-hosted-ai-starter-kit.git
+4. Use npx to install and run n8n. Type the following command in to the terminal.
 
+npx n8n
 
-3. Look up the command_line_ollama_guide.txt in this repository on how to install Ollama.
-Install Ollama on your machine.
+5. Access http://localhost:5678 with your browser. You will find n8n running there. 
 
+6. Serve Ollama. You may type in the following command or look up the command_line_ollama_guide.txt for more information.
 
+ollama serve
+
+7. Create your own model. For AI agents, you may use the default "Window Memory Buffer" as the agent's memory storage so that it can generate text based on the last few prompts. Also remember to set "http://127.0.0.1:11434" in the model section's base URL for Ollama. Replacing 127.0.0.1 with local host will not work. 
 
