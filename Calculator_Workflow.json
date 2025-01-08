@@ -1,5 +1,5 @@
 {
-  "name": "Calculator Workflow",
+  "name": "My workflow",
   "nodes": [
     {
       "parameters": {
@@ -8,10 +8,10 @@
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
       "typeVersion": 1.1,
       "position": [
-        220,
-        0
+        -140,
+        -60
       ],
-      "id": "18346c8f-9fe4-4a2c-b3e2-806ccbc24729",
+      "id": "7675b82f-e1cf-477e-9403-d4058f1750ed",
       "name": "When chat message received",
       "webhookId": "c1eaf529-0184-4098-bd7c-10875a629ff0"
     },
@@ -20,10 +20,10 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        540,
-        220
+        180,
+        160
       ],
-      "id": "02bc3d69-4255-4e99-94d7-89be58822d97",
+      "id": "a553c87f-0b8b-42a7-a275-fb80807fa666",
       "name": "Window Buffer Memory"
     },
     {
@@ -34,40 +34,45 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOllama",
       "typeVersion": 1,
       "position": [
-        360,
-        220
+        0,
+        160
       ],
-      "id": "ef66c710-e1aa-42b7-8797-77c0faed868f",
+      "id": "8b70d6a8-2995-4018-a936-abc043cfa738",
       "name": "Ollama Chat Model",
       "credentials": {
         "ollamaApi": {
-          "id": "Li8Bs4wkQJd9IB16",
+          "id": "NEk7fx5ayWlYTvMd",
           "name": "Ollama account"
         }
       }
     },
     {
       "parameters": {
+        "promptType": "define",
+        "text": "=Here is the infromation from previous node -> {{ $json.chatInput }}\nFeed it into the calculator tool and get its output.\nOutput only the number, nothing else.",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.7,
       "position": [
-        440,
-        0
+        80,
+        -60
       ],
-      "id": "3c05067a-8693-47cb-a554-4aeb0095652c",
-      "name": "Calculator Agent"
+      "id": "32824a69-c0d2-4edd-89ec-1f86a9bb6999",
+      "name": "Calculator Agent",
+      "alwaysOutputData": true,
+      "executeOnce": true,
+      "notesInFlow": false
     },
     {
       "parameters": {},
       "type": "@n8n/n8n-nodes-langchain.toolCalculator",
       "typeVersion": 1,
       "position": [
-        680,
-        220
+        320,
+        160
       ],
-      "id": "1e61d0fb-da9a-4703-b3ff-5bf074aa0f99",
+      "id": "3863a7fd-9d4c-4f26-9398-8fc6840e44d5",
       "name": "Calculator"
     }
   ],
@@ -122,10 +127,10 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "fc7367a5-a10d-473c-adc3-18322f6466c8",
+  "versionId": "58a71938-cc4a-45ca-820b-d36dbc2b85a2",
   "meta": {
-    "instanceId": "bb9ee065df6d726fd27ac40d594063ecdabf95c3f7a64b11e85c99d715ccfca0"
+    "instanceId": "1e4c1c6d7cb015e3622f8e4e056ae2f929d1f357b581e899de135713a076f673"
   },
-  "id": "YNosFqZYc03GbKEG",
+  "id": "zdGdgofuFscb7nft",
   "tags": []
 }
